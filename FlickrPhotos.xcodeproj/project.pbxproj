@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99021E8020FE74A300AB639A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E352420FD701100FED535 /* AppDelegate.swift */; };
+		99021E8120FE74BF00AB639A /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E352620FD701100FED535 /* PhotosViewController.swift */; };
 		990E352C20FD701200FED535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 990E352B20FD701200FED535 /* Assets.xcassets */; };
 		990E352F20FD701200FED535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990E352D20FD701200FED535 /* LaunchScreen.storyboard */; };
 		990E356920FD70EC00FED535 /* FlickrAnimationFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 990E355920FD70EB00FED535 /* FlickrAnimationFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		990E357B20FD754400FED535 /* DummyFrameFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E357920FD754400FED535 /* DummyFrameFile.swift */; };
-		99D8BC5E20FD922E00B80EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E352420FD701100FED535 /* AppDelegate.swift */; };
 		99D8BC6120FD937500B80EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990E352820FD701100FED535 /* Main.storyboard */; };
-		99D8BC6220FD93BE00B80EA4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E352620FD701100FED535 /* PhotosViewController.swift */; };
 		99D8BC6320FD93EA00B80EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990E352820FD701100FED535 /* Main.storyboard */; };
 		99F26E3920FD8BDF008CB311 /* FlickrAnimationFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 990E355720FD70EB00FED535 /* FlickrAnimationFramework.framework */; };
 		99F26E3A20FD8BDF008CB311 /* FlickrAnimationFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 990E355720FD70EB00FED535 /* FlickrAnimationFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -155,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				990E352420FD701100FED535 /* AppDelegate.swift */,
+				990E352620FD701100FED535 /* PhotosViewController.swift */,
 				990E352B20FD701200FED535 /* Assets.xcassets */,
 				990E352D20FD701200FED535 /* LaunchScreen.storyboard */,
 				990E353020FD701200FED535 /* Info.plist */,
@@ -165,7 +166,6 @@
 		990E355820FD70EB00FED535 /* FlickrAnimationFramework */ = {
 			isa = PBXGroup;
 			children = (
-				990E352620FD701100FED535 /* PhotosViewController.swift */,
 				990E352820FD701100FED535 /* Main.storyboard */,
 				990E355920FD70EB00FED535 /* FlickrAnimationFramework.h */,
 				990E355A20FD70EB00FED535 /* Info.plist */,
@@ -379,7 +379,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99D8BC5E20FD922E00B80EA4 /* AppDelegate.swift in Sources */,
+				99021E8020FE74A300AB639A /* AppDelegate.swift in Sources */,
+				99021E8120FE74BF00AB639A /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,7 +403,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				990E357B20FD754400FED535 /* DummyFrameFile.swift in Sources */,
-				99D8BC6220FD93BE00B80EA4 /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

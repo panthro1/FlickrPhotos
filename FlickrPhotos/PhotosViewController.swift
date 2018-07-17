@@ -9,12 +9,14 @@
 import UIKit
 
 
-public class PhotosViewController: UIViewController  {
+ class PhotosViewController: UICollectionViewController  {
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    public override func viewDidLoad() {
+    
+        override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        collectionView?.backgroundColor = UIColor.blue
     }
     
     
