@@ -3,5 +3,6 @@
     <pages>
         <page name='CollectionView'/>
         <page name='StoryboardView'/>
+        <page name='ExtensionAnchor'/>
     </pages>
 </playground>

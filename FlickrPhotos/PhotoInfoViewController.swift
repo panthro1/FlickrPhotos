@@ -1,0 +1,56 @@
+//
+//  ViewController.swift
+//  FlickrPhotos
+//
+//  Created by john ledesma on 7/23/18.
+//  Copyright © 2018 john ledesma. All rights reserved.
+//
+
+import UIKit
+
+class PhotoInfoViewController: UIViewController {
+    
+    let imageView: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.layer.cornerRadius = 0
+        image.layer.masksToBounds = true
+        image.translatesAutoresizingMaskIntoConstraints = false
+        print("imageviewdetail")
+        return image
+    }()
+    
+    var photo: Photo! {
+        didSet {
+            navigationItem.title = photo.title
+        }
+    }
+    var photoCollection: PhotoCollection!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupConstraints()
+        view.backgroundColor = UIColor.white
+        photoCollection.fetchImage(for: photo, completion: { (result) -> Void in
+            switch result {
+            case let .success(image):
+                self.imageView.image = image
+            case let .failure(error):
+                print("Error fetching image for photo: \(error)")
+            }
+        })
+    }
+    func setupConstraints() {
+        
+        view.addSubview(imageView)
+        
+        imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+//         imageView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+//        imageView.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
+        
+        
+}
+}
