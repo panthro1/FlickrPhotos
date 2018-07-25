@@ -15,6 +15,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupViews()
          update(with: nil)
+        setAnimation()
         
     }
     
@@ -97,18 +98,20 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         flickrImage.trailingAnchor.constraint(equalTo: trailingAnchor).isActive               = true
         flickrImage.heightAnchor.constraint(equalTo: heightAnchor).isActive  = true
         
-//
-//        flickrImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0)
-//         flickrImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0)
-//         flickrImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0)
-//        flickrImage.heightAnchor.constraint(equalToConstant: 0)
-//
-//        progressSpinner.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-//        progressSpinner.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-//
         
     }
     
+    private func setAnimation() {
+        let animation : CABasicAnimation = CABasicAnimation(keyPath: "transform")
+        animation.duration = drand48()+0.1
+        animation.repeatCount = 1000
+        animation.autoreverses = true
+
+        let transform : CATransform3D = CATransform3DMakeRotation(CGFloat(Double.pi),  0.0, 0.5, 0.0)
+        animation.toValue = NSValue(caTransform3D : transform)
+
+        self.layer.add(animation, forKey: "transform")
+    }
     
     
 }

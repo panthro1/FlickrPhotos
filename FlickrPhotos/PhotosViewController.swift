@@ -14,10 +14,6 @@ import UIKit
         let photoDataSource = PhotoDataSource()
         var photoCollection = PhotoCollection()
     
-        var estimateWidth = 160.0
-        var cellMarginSize = 10.0
-        var gridline = 0
-    
 
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +53,21 @@ import UIKit
     
     private func configureCollectionView() {
         let layout = collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.sectionInset = UIEdgeInsetsMake(44, 0, 0, 0)
+        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
         layout.itemSize = CGSize(width: view.frame.size.width/2 - 0.25, height: 250.0)
     }
+    //************************************
     
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//        self.navigationItem.titleView = searchBar
+//        self.collectionView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+//
+//        AlbumVC.constantTotal = 20
+//        AlbumVC.total = 19
+//
+//
+//    }
     
     override func collectionView(_ collectionView: UICollectionView,
                                  willDisplay cell: UICollectionViewCell,
@@ -89,24 +96,7 @@ import UIKit
         })
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-////
-//        if gridline == 1{
-//
-//            let width = self.calculateWith()
-//            return CGSize(width: width, height: width + width/3)
-//
-//        }
-//        else{
-//            let width = self.calculateWith()
-//
-//            return CGSize(width: 2 * width + 10, height: (2 * width + 10 )+(2 * width + 10)/2 )
-//
-//
-//        }
-////        return CGSize(width: 90, height: 90)
-//
-//    }
+
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -120,14 +110,7 @@ import UIKit
         return 0
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0
-//    }
-//
-//
-//   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.frame.width, height: 50)
-//    }
+
     
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -140,25 +123,22 @@ import UIKit
                 let destinationVC = PhotoInfoViewController()
                 destinationVC.photo = photo
                 destinationVC.photoCollection = photoCollection
+                
+                let transition = CATransition()
+                transition.duration = 0.5
+                transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                transition.type = kCATransitionFade
+                transition.subtype = kCATransitionFromRight
+                self.navigationController?.view.layer.add(transition, forKey: nil)
+                self.navigationController?.pushViewController(destinationVC, animated: true)
 
-//        let photoInfoViewController = PhotoInfoViewController()
-        navigationController?.pushViewController(destinationVC, animated: true)
+////        let photoInfoViewController = PhotoInfoViewController()
+//        navigationController?.pushViewController(destinationVC, animated: true)
         }
         print("didSelectItemAt")
         
         }
 
-    
-    func calculateWith() -> CGFloat {
-        
-        let estimatedWidth = CGFloat(estimateWidth)
-        let cellCount = floor(CGFloat(self.view.frame.size.width / estimatedWidth))
-        
-        let margin = CGFloat(cellMarginSize * 2)
-        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
-        
-        return width
-    }
     
 }
 
