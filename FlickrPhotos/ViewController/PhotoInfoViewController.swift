@@ -16,7 +16,6 @@ class PhotoInfoViewController: UIViewController {
         image.layer.cornerRadius = 0
         image.layer.masksToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
-        print("imageviewdetail")
         return image
     }()
     
@@ -25,12 +24,16 @@ class PhotoInfoViewController: UIViewController {
             navigationItem.title = photo.title
         }
     }
+    
     var photoCollection: PhotoCollection!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupConstraints()
+        
         view.backgroundColor = UIColor.white
+        
+        setupConstraints()
+        
         photoCollection.fetchImage(for: photo, completion: { (result) -> Void in
             switch result {
             case let .success(image):
@@ -48,9 +51,6 @@ class PhotoInfoViewController: UIViewController {
         imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//         imageView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-//        imageView.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
-        
-        
+
 }
 }

@@ -8,12 +8,25 @@
 
 import UIKit
 
-class PhotoDataSource: NSObject, UICollectionViewDataSource {
+/***
+ A Base class from which to subclass 'UICollectionView' data sources from
+*/
+
+class BasePhotoDatasource: NSObject {
     
     var photos: [Photo] = []
     
+    override init() {
+        super.init()
+    }
+    
+}
+
+// MARK: - Collection view data source
+
+extension BasePhotoDatasource: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //        return photos.count
         return photos.count
     }
     
@@ -23,5 +36,6 @@ class PhotoDataSource: NSObject, UICollectionViewDataSource {
         return cell
     }
     
-    
 }
+
+

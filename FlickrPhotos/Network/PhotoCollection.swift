@@ -22,7 +22,6 @@ enum PhotosResult {
     case failure(Error)
 }
 
-// Mark:
 class PhotoCollection {
     
     let imageCollection = ImageCollection()

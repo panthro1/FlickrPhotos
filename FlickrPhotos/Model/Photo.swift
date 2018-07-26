@@ -8,7 +8,6 @@
 
 import Foundation
 
-// Mark:
 struct Photo {
     let title: String
     let remoteURL: URL
