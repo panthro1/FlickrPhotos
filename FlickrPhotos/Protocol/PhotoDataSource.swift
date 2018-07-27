@@ -12,7 +12,7 @@ import UIKit
  A Base class from which to subclass 'UICollectionView' data sources from
 */
 
-class BasePhotoDatasource: NSObject {
+final class BasePhotoDatasource: NSObject {
     
     var photos: [Photo] = []
     

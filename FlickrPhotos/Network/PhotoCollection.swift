@@ -22,7 +22,7 @@ enum PhotosResult {
     case failure(Error)
 }
 
-class PhotoCollection {
+final class PhotoCollection {
     
     let imageCollection = ImageCollection()
     

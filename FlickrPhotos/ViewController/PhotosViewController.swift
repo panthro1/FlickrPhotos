@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PhotosViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout  {
+final class PhotosViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout  {
     
     // Properties
     

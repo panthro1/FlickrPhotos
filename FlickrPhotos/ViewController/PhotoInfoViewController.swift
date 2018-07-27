@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoInfoViewController: UIViewController {
+final class PhotoInfoViewController: UIViewController {
     
     let imageView: UIImageView = {
         let image = UIImageView()
